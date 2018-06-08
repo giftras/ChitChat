@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="80dp"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@drawable/messageshape">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#536DFF"
+        android:textStyle="bold"
+        android:text="GiftZi"
+        android:padding="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/usernameText"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:text="Hi friend"
+        android:id="@+id/messageText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#000"-->
+        <!--android:text="9:15 pm"-->
+        <!--android:id="@+id/messageTime"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="5dp"/>-->
+
+</LinearLayout>

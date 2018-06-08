@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "1096180798010",
+    "firebase_url": "https://chitchatapplication-e0b9a.firebaseio.com",
+    "project_id": "chitchatapplication-e0b9a",
+    "storage_bucket": "chitchatapplication-e0b9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096180798010:android:94d342b43ec75ecb",
+        "android_client_info": {
+          "package_name": "com.example.gift.chitchatapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096180798010-vihg4l3sb87m1mi5ammsnjn0ika7rqd0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gift.chitchatapplication",
+            "certificate_hash": "24713e4543c01a1021bb1b8c482313cdcf659754"
+          }
+        },
+        {
+          "client_id": "1096180798010-14lia36j89dnsi69pgl4k746b5av7e3t.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1096180798010-14lia36j89dnsi69pgl4k746b5av7e3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0hQA74nwBD_HOGIYRuJ3um7JWyAHiH5c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096180798010-14lia36j89dnsi69pgl4k746b5av7e3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
