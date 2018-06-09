@@ -24,13 +24,6 @@
         android:id="@+id/messageText"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="15dp"/>
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textColor="#000"-->
-        <!--android:text="9:15 pm"-->
-        <!--android:id="@+id/messageTime"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:layout_marginRight="5dp"/>-->
+
 
 </LinearLayout>

@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         mMessageList.setLayoutManager(linearLayoutManager);
+        //check that the user really login
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -54,7 +57,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+        //Action for enter to click sent
+        editMessage.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_SEND) {
+                    sendButtonClicked(v);
+                    handled = true;
+                }
+                return handled;
+            }
+        });
     }
+
     public void sendButtonClicked(View view){
         //get current user info
         mCurrentUser = mAuth.getCurrentUser();
@@ -95,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if(id == R.id.logout){
             mAuth.signOut();
-            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }else if(id == R.id.changeusername){
+            startActivity(new Intent(MainActivity.this, UpdateUserActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -106,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         final FirebaseRecyclerAdapter <Message,MessgeViewHolder> FBRA = new FirebaseRecyclerAdapter<Message, MessgeViewHolder>(
                 Message.class, R.layout.singlemessagelayout, MessgeViewHolder.class, mDatabase
         ) {
+            //get the content from firebase
             @Override
             protected void populateViewHolder(MessgeViewHolder viewHolder, Message model, int position) {
                 viewHolder.setContent(model.getContent());

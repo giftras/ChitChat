@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.gift.chitchatapplication.LoginActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/chitchat" />
 
     <EditText
         android:layout_width="match_parent"
@@ -24,7 +28,13 @@
         android:layout_height="wrap_content"
         android:onClick="loginButtonClicked"
         android:text="Log in"
-
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signupButton"
+        android:text="Register for Account"
+        android:onClick="registerButtonClicked"
         />
 
 </LinearLayout>

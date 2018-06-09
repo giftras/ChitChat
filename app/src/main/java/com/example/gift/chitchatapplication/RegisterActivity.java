@@ -39,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email_content,password_content).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+                    //if success , in realtime database it will add name to the child element of users
                     if (task.isSuccessful()){
                         String user_id = mAuth.getCurrentUser().getUid();
                         DatabaseReference current_user_db = mDatabase.child(user_id);
@@ -49,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
             });
         }
     }
+    //go to login Activity
     public void loginButtonClicked(View view){
         startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
     }

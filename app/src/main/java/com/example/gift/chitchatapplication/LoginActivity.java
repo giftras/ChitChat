@@ -32,19 +32,22 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         emailText = (EditText) findViewById(R.id.userEmail);
         passText = (EditText) findViewById(R.id.userPass);
+        //connect to email authentication
         mAuth = FirebaseAuth.getInstance();
+        //database that which users is child element
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
     }
-
 
     public void loginButtonClicked(View view) {
         String email = emailText.getText().toString().trim();
         String pass = passText.getText().toString().trim();
         final Context now = this;
+        // user need to fill all value
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(pass)) {
             Toast.makeText(this, "Please enter email and password", Toast.LENGTH_LONG).show();
         } else {
+            //Firebase SignIn function
             mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -61,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
     }
         public void checkUserExists() {
             final String user_id = mAuth.getCurrentUser().getUid();
+            //if found uid of the database then give the access to MainActivity.class
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,6 +77,10 @@ public class LoginActivity extends AppCompatActivity {
                 public void onCancelled(DatabaseError databaseError) {
                 }
             });
+    }
+    //if clicked register button will lead to RegisterActivity.class
+    public void registerButtonClicked(View view){
+        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
     }
 
 
